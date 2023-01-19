@@ -1,16 +1,14 @@
 @import 'fonts';
 @import 'variables';
 @import 'mixins';
-
-body {
-    margin: 0;
-}
+@import 'global';
 
 .header {
     @include flex-between;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans', Arial, sans-serif;
     height: 64px;
     background-color: $black;
+    box-shadow: $shadow-light;
 
     span {
         font-size: 22px;
@@ -31,16 +29,40 @@ body {
         width: 1000px;
     }
 
-    .search {
-        max-width: 720px;
-        min-width: 320px;
+    .search-wrapper {
+        background-color: $gray;
+        display: flex;
+        border-radius: $radius;
         width: 100%;
         height: 48px;
-        border-radius: $radius;
-        outline: none;
-        background-color: $lightgray;
-        border: none;
+        align-items: center;
+        max-width: 720px;
+        min-width: 320px;
+        overflow: hidden;
+    }
 
+    .searchbar {
+        outline: none;
+        border: none;
+        background-color: transparent;
+        font-size: 16px;
+        width: 100%;
+        font-weight: 500;
+    }
+
+    .search {
+        @include flex-center;
+        @include icon;
+        padding-left: 0.3rem;
+        border: none;
+        color: $white;
+        
+    }
+
+    .search-exit {
+        @include flex-center;
+        color: $white;
+        padding-right: 1.2rem;
     }
 
     .button {
@@ -62,11 +84,24 @@ body {
         width: 24px;
     }
 
+    .search-a {
+        width: 22px;
+        color: white;
+        opacity: 80%;
+        display: none;
+    }
+
     .button-wrapper {
         @include flex-between;
         padding: 8px;
         height: 48px;
         display: flex;
         padding-right: 2em;
+        width: 162px;
     }
+
+    @media all and (max-width: 650px) {
+        .search-wrapper { display: none; }
+        .search-a { display: block;}
+      }
 }

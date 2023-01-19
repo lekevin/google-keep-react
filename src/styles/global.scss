@@ -1,0 +1,42 @@
+@import 'variables';
+
+::placeholder {
+    color: white; /* Chrome, Firefox, Opera, Safari 10.1+ */
+    opacity: 1;  /* Firefox */
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: white;
+    font-family: 'Open Sans', Arial, sans-serif;
+  }
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: white;
+  font-family: 'Open Sans', Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: $black;
+  width: 100%;
+  height: 100%;
+}
+
+
+::-webkit-input-placeholder { 
+  color: $lightgray;
+}
+
+::-moz-placeholder {
+  color: $lightgray;
+}
+
+::-ms-placeholder {
+  color:$lightgray;
+}
+
+::placeholder {
+  color:$lightgray;
+}
+
