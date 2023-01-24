@@ -5,6 +5,10 @@ import { BiSearch } from "react-icons/bi";
 import { AiOutlineClose } from "react-icons/ai";
 
 function Header() {
+
+  const refresh = () => {
+    window.location.reload();
+  }
   return (
     <body>
       <div className="header">
@@ -24,8 +28,8 @@ function Header() {
           </div>
         </div>
         <div className="button-wrapper">
-          <BiSearch className="search-a button size=" />
-          <MdRefresh className="refresh button" />
+          <BiSearch className="search-a button" />
+          <MdRefresh className="refresh button" onClick={refresh} />
           <BsViewStacked className="view button" />
           <BsGear className="gear button" />
         </div>

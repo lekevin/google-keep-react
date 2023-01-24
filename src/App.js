@@ -18,7 +18,6 @@ function App(props) {
       <Header />
       <AddNote onCreate={addNote} />
       {notes.map((note, index) => {
-        console.log(note, index);
         return (
           <Note
             key={index}

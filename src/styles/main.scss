@@ -49,6 +49,11 @@
         width: 100%;
         font-weight: 500;
         caret-color: auto;
+        color: white;
+    }
+
+    .searchbar:focus {
+        color: black;
     }
 
     .search  {
@@ -70,6 +75,7 @@
         border: none;
         color: #8d8f92;
         padding: 8px;
+        cursor: pointer;
     }
 
     .gear {
