@@ -1,38 +1,33 @@
 import "./styles/main.scss";
-import React from "react";
-import { MdRefresh } from "react-icons/md";
-import { BsViewStacked, BsGear } from "react-icons/bs";
-import { BiSearch } from "react-icons/bi";
-import { AiOutlineClose } from "react-icons/ai";
-import AddNote from "./components/AddNote.js";
+import React, { useState } from "react";
+import AddNote from "./components/AddNote.jsx";
+import Header from "./components/Header.jsx";
+import Note from "./components/Note.jsx";
 
-function App() {
+function App(props) {
+  const [notes, setNotes] = useState([]);
+
+  function addNote(newNote) {
+    setNotes((prevValue) => {
+      return [...prevValue, newNote];
+    });
+  }
+
   return (
     <body>
-      <div className="header">
-        <div className="nav1">
-          <img src="icon.png" alt="logo" className="logo" />
-          <span>Keep</span>
-          <div className="search-wrapper">
-            <div className="search">
-              <BiSearch size={22} />
-            </div>
-            <div className="searchbar">
-              <input className="searchbar" placeholder="Search"></input>
-            </div>
-            <div className="search-exit">
-              <AiOutlineClose size={24} />
-            </div>
-          </div>
-        </div>
-        <div className="button-wrapper">
-          <BiSearch className="search-a button size=" />
-          <MdRefresh className="refresh button" />
-          <BsViewStacked className="view button" />
-          <BsGear className="gear button" />
-        </div>
-      </div>
-      <AddNote />
+      <Header />
+      <AddNote onCreate={addNote} />
+      {notes.map((note, index) => {
+        console.log(note, index);
+        return (
+          <Note
+            key={index}
+            id={index}
+            title={note.title}
+            content={note.content}
+          />
+        );
+      })}
     </body>
   );
 }
