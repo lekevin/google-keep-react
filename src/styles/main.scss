@@ -3,6 +3,11 @@
 @import 'mixins';
 @import 'global';
 
+body {
+    width: 100%;
+    margin: 0 auto;
+}
+
 .header {
     @include flex-between;
     font-family: $font;
@@ -21,6 +26,15 @@
         height: 40px;
         width: 40px;
         padding: 10px;
+        cursor: pointer;
+    }
+
+    .keep {
+        cursor: pointer;
+    }
+
+    .search-exit {
+        cursor: pointer;
     }
 
     .nav1 {
@@ -82,8 +96,13 @@
         width: 20px;
     }
 
-    .view {
+    .listview {
         width: 18px;
+    }
+
+    .gridview {
+        width: 20px;
+        display: none;
     }
 
     .refresh {
@@ -153,4 +172,9 @@
 
 .searchbar::placeholder {
     color: $white;
+}
+
+.note-component-wrapper {
+    justify-content: center;
+    display: flex;
 }

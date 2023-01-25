@@ -38,3 +38,20 @@ body {
 ::placeholder {
   color:$lightgray;
 }
+
+html {
+  scrollbar-width: normal;
+  scrollbar-color: #777 #555;
+}
+
+html::-webkit-scrollbar {
+  width: 8px;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: #777;
+}
+
+html::-webkit-scrollbar-track {
+  background-color: #555;
+}

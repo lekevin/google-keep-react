@@ -44,6 +44,7 @@ function AddNote({ onCreate}) {
             id="note-content"
             placeholder="Take a note..."
             onChange={handleChange}
+            maxlength="2000"
           ></textarea>
           <div className="note-close" onClick={closeButton}>Close</div>
       </form>

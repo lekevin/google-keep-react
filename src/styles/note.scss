@@ -7,6 +7,7 @@
     color: white;
     width: 200px;
     min-height: 100px;
+    max-height: 600px;
     border-radius: $radius;
     border-color: $gray;
     border-width: 1px;
@@ -27,6 +28,22 @@
 
 .notes-content {
     padding-bottom: 30px;
+    max-height: 500px;
+    overflow: auto;
+    scrollbar-width: normal;
+    scrollbar-color: #777 #555;
+}
+
+.notes-content::-webkit-scrollbar {
+width: 8px;
+}
+
+.notes-content::-webkit-scrollbar-thumb {
+background-color: #777;
+}
+
+.notes-content::-webkit-scrollbar-track {
+background-color: #555;
 }
 
 .notes-title {
@@ -35,8 +52,15 @@
 }
 
 .delete {
-    position: absolute;
-    bottom: 0;
-    right: 0;
+    float: right;
     padding: 7px;
+}
+
+.list {
+    max-width: 600px;
+    width: 100%;
+    float: none;
+    margin: auto;
+    margin-top: 10px;
+    padding-bottom: 30px;
 }
