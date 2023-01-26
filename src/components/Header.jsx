@@ -5,12 +5,16 @@ import { BiSearch } from "react-icons/bi";
 import { AiOutlineClose } from "react-icons/ai";
 
 
-function Header() {
+function Header({onSearch}) {
+
+  function onChange(e) {
+    return onSearch(e.target.value);
+  }
 
   const changeView = () => {
-    var el = document.querySelectorAll(".notes-wrapper")
-    for (var i = 0; i < el.length; i++) { 
-      if ( el[i].classList.contains("list") ) {
+    var el = document.querySelectorAll(".notes-wrapper");
+    for (let i in el) { 
+      if ( el[i].classList.includes("list") ) {
         el[i].classList.remove("list");
       } else {
         el[i].classList.add("list");
@@ -36,7 +40,7 @@ function Header() {
               <BiSearch size={22} />
             </div>
             <div className="searchbar">
-              <input className="searchbar" id="searchbar" placeholder="Search"></input>
+              <input className="searchbar" id="searchbar" placeholder="Search" onChange={onChange} ></input>
             </div>
             <div className="search-exit">
               <AiOutlineClose size={24} onClick={searchExit}/>
