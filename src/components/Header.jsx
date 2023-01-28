@@ -14,7 +14,7 @@ function Header({onSearch}) {
   const changeView = () => {
     var el = document.querySelectorAll(".notes-wrapper");
     for (let i in el) { 
-      if ( el[i].classList.includes("list") ) {
+      if ( el[i].classList.contains("list") ) {
         el[i].classList.remove("list");
       } else {
         el[i].classList.add("list");

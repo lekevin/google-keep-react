@@ -6,13 +6,26 @@ import Note from "./components/Note.jsx";
 
 function App() {
   const [notes, setNotes] = useState([]);
+  let [updatedNotes, setUpdatedNotes] = useState(notes);
 
   function filterNotes(e) {
-    console.log(e + "-----" + JSON.stringify(notes));
+    if (e === "") {
+      setUpdatedNotes(notes.slice());
+      console.log("notes: " + notes);
+      return notes;
+    } else {
+      let filteredNotes = notes.filter(
+        (note) => note.title.includes(e) || note.content.includes(e)
+      );
+      setUpdatedNotes(filteredNotes);
+      console.log("updatedNotes: " + updatedNotes);
+      return updatedNotes;
+    }
   }
 
   function addNote(newNote) {
     setNotes((notes) => {
+      setUpdatedNotes([...notes, newNote]);
       return [...notes, newNote];
     });
   }
@@ -27,7 +40,7 @@ function App() {
     <body>
       <Header onSearch={filterNotes} />
       <AddNote onCreate={addNote} />
-      {notes.map((note, index) => {
+      {updatedNotes.map((note, index) => {
         return (
           <Note
             className="nnnooo"
