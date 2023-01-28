@@ -32,6 +32,7 @@ function App() {
 
   function noteRemove(id) {
     setNotes((notes) => {
+      setUpdatedNotes([...notes.filter((note, index) => index !== id)]);
       return [...notes.filter((note, index) => index !== id)];
     });
   }
