@@ -51,7 +51,7 @@ body {
         height: 48px;
         align-items: center;
         max-width: 720px;
-        min-width: 320px;
+        min-width: 100px;
         overflow: hidden;
     }
 
@@ -153,8 +153,8 @@ body {
     }
 
     @media all and (max-width: 650px) {
-        .search-wrapper { display: none; }
-        .search-a { display: block;}
+        .active {display: none;}
+        .search-a {display: block;}
       }
 }
 
